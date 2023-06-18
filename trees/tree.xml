@@ -1,0 +1,12 @@
+<root BTCPP_format="4" >
+     <BehaviorTree ID="MainTree">
+        <Sequence name="root_sequence">
+
+            <StateSetter topic_name="state_setter" state="{state}"/>
+            <MoveBase name="movebase" goal="idle!" _skipIf="state != IDLE"/>
+            <MoveBase name="movebase" goal="auto!" _skipIf="state != AUTO"/>
+            <MoveBase name="movebase" goal="manual!" _skipIf="state != MANUAL"/>
+            <MoveBase name="movebase" goal="error!" _skipIf="state != ERROR"/>
+        </Sequence>
+     </BehaviorTree>
+</root>
